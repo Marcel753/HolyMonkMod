@@ -34,7 +34,7 @@ public class HolyMonkMod
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent evt)
     {
-        //TODO: Test
+        //awdWAD
     }
 
     @Mod.EventHandler
