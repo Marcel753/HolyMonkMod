@@ -4,6 +4,7 @@ import at.htlkaindorf.holymonkmod.block.ModBlocks;
 import at.htlkaindorf.holymonkmod.client.HolyMonkTab;
 import at.htlkaindorf.holymonkmod.item.ModItems;
 import at.htlkaindorf.holymonkmod.proxy.CommonProxy;
+import at.htlkaindorf.holymonkmod.world.gen.generators.WorldGenCustomStructures;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -14,6 +15,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = HolyMonkMod.modId, name = HolyMonkMod.name, version = HolyMonkMod.version)
 
@@ -55,7 +57,7 @@ public class HolyMonkMod
         @SubscribeEvent
         public static void registerBlocks(RegistryEvent.Register<Block> event)
         {
-
+            GameRegistry.registerWorldGenerator(new WorldGenCustomStructures(), 0);
         }
 
         @SubscribeEvent
