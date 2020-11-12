@@ -1,4 +1,8 @@
 #Items
 item.kreuz_holz.name=Holz Kreuz
+item.kreuz_stein.name=Stein Kreuz
+item.kreuz_eisen.name=Eisen Kreuz
+item.kreuz_gold.name=Gold Kreuz
+item.kreuz_diamant.name=Diamant Kreuz
 
 #Blocks
