@@ -29,7 +29,7 @@ public class WorldGenCustomStructures implements IWorldGenerator
                 break;
 
             case 0:
-                generateStructure(KIRCHE, world, random, chunkX, chunkZ, 150, Blocks.GRASS, BiomePlains.class);
+                generateStructure(KIRCHE, world, random, chunkX, chunkZ, 250, Blocks.GRASS, BiomePlains.class);
                 break;
 
             case -1:

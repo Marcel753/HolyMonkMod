@@ -2,3 +2,14 @@
 item.kreuz_holz.name=Holz Kreuz
 
 #Blocks
+
+#Entities
+entity.moench.name=Mönch
+entity.nonne.name=Nonne
+
+#Potions
+effect.weihwasser=Weihwasser
+potion.effect.weihwasser=Potion of Weihwasser
+splash_potion.effect.weihwasser=Splash Potion of Weihwasser
+lingering_potion.effect.weihwasser=Lingering Potion of Weihwasser
+tipped_arrow.effect.weihwasser=Arrow of Weihwasser

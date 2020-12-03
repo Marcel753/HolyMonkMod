@@ -13,7 +13,8 @@ public class ItemBase extends Item
         this.name = name;
         setUnlocalizedName(name);
         setRegistryName(name);
-        setCreativeTab(HolyMonkMod.creativeTab);
+        setCreativeTab(CreativeTabs.MATERIALS);
+
     }
 
     public void registerItemModel()

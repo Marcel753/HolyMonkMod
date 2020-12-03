@@ -1,9 +1,12 @@
 package at.htlkaindorf.holymonkmod;
 
 import at.htlkaindorf.holymonkmod.block.ModBlocks;
-import at.htlkaindorf.holymonkmod.client.HolyMonkTab;
+import at.htlkaindorf.holymonkmod.entity.EntityBase;
 import at.htlkaindorf.holymonkmod.item.ModItems;
+import at.htlkaindorf.holymonkmod.potions.PotionInit;
 import at.htlkaindorf.holymonkmod.proxy.CommonProxy;
+import at.htlkaindorf.holymonkmod.util.handlers.RenderHandler;
+import at.htlkaindorf.holymonkmod.util.handlers.SoundsHandler;
 import at.htlkaindorf.holymonkmod.world.gen.generators.WorldGenCustomStructures;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -25,7 +28,8 @@ public class HolyMonkMod
     public static final String name =  "Holy Monk Mod";
     public static final String version = "1.0";
 
-    public static final HolyMonkTab creativeTab = new HolyMonkTab();
+    public static final int ENTITY_MOENCH = 120;
+    public static final int ENTITY_NONNE = 130;
 
     @SidedProxy(serverSide = "at.htlkaindorf.holymonkmod.proxy.CommonProxy", clientSide = "at.htlkaindorf.holymonkmod.proxy.ClientProxy")
     public static CommonProxy proxy;
@@ -36,13 +40,13 @@ public class HolyMonkMod
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent evt)
     {
-        //awdWAD
+
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent evt)
     {
-
+        SoundsHandler.registerSounds();
     }
 
     @Mod.EventHandler
@@ -54,10 +58,15 @@ public class HolyMonkMod
     @Mod.EventBusSubscriber
     public static class RegistrationHandler
     {
+
         @SubscribeEvent
         public static void registerBlocks(RegistryEvent.Register<Block> event)
         {
             GameRegistry.registerWorldGenerator(new WorldGenCustomStructures(), 0);
+
+            EntityBase.registerEntites();
+            RenderHandler.registerEntityRenders();
+            PotionInit.registerPotions();
         }
 
         @SubscribeEvent

@@ -1,0 +1,22 @@
+{
+  "entity.moench.ambient":
+  {
+    "category": "entity",
+    "subtitle": "entity.moench.ambient",
+    "sounds": [{"name": "holymonk:entity/moench/ambient", "stream": true}]
+  },
+
+   "entity.moench.hurt":
+   {
+      "category": "entity",
+      "subtitle": "entity.moench.hurt",
+      "sounds": [{"name": "holymonk:entity/moench/hurt", "stream": true}]
+   },
+
+  "entity.moench.death":
+  {
+    "category": "entity",
+    "subtitle": "entity.moench.death",
+    "sounds": [{"name": "holymonk:entity/moench/death", "stream": true}]
+  }
+}
