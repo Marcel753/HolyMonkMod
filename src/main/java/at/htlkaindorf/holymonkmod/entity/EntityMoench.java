@@ -79,4 +79,5 @@ public class EntityMoench extends EntityVillager
     {
         return SoundsHandler.ENTITY_MOENCH_DEATH;
     }
+
 }

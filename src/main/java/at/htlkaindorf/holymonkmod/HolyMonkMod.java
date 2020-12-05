@@ -1,10 +1,10 @@
 package at.htlkaindorf.holymonkmod;
 
-import at.htlkaindorf.holymonkmod.block.ModBlocks;
 import at.htlkaindorf.holymonkmod.entity.EntityBase;
-import at.htlkaindorf.holymonkmod.item.ModItems;
+import at.htlkaindorf.holymonkmod.init.ItemInit;
 import at.htlkaindorf.holymonkmod.potions.PotionInit;
 import at.htlkaindorf.holymonkmod.proxy.CommonProxy;
+import at.htlkaindorf.holymonkmod.util.IHasModel;
 import at.htlkaindorf.holymonkmod.util.handlers.RenderHandler;
 import at.htlkaindorf.holymonkmod.util.handlers.SoundsHandler;
 import at.htlkaindorf.holymonkmod.world.gen.generators.WorldGenCustomStructures;
@@ -58,9 +58,8 @@ public class HolyMonkMod
     @Mod.EventBusSubscriber
     public static class RegistrationHandler
     {
-
         @SubscribeEvent
-        public static void registerBlocks(RegistryEvent.Register<Block> event)
+        public static void register(RegistryEvent.Register<Block> event)
         {
             GameRegistry.registerWorldGenerator(new WorldGenCustomStructures(), 0);
 
@@ -70,17 +69,21 @@ public class HolyMonkMod
         }
 
         @SubscribeEvent
-        public static void registerItems(RegistryEvent.Register<Item> event)
+        public static void onItemRegister(RegistryEvent.Register<Item> event)
         {
-            ModItems.register(event.getRegistry());
-            ModBlocks.registerItemBlocks(event.getRegistry());
+            event.getRegistry().registerAll(ItemInit.ITEMS.toArray(new Item[0]));
         }
 
         @SubscribeEvent
-        public static void registerItems(ModelRegistryEvent event)
+        public static void onModelRegister(ModelRegistryEvent event)
         {
-            ModItems.registerModels();
-            ModBlocks.registerModels();
+            for(Item item : ItemInit.ITEMS)
+            {
+                if(item instanceof IHasModel)
+                {
+                    ((IHasModel)item).registerModels();
+                }
+            }
         }
     }
 }
