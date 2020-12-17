@@ -33,6 +33,8 @@ public class HolyMonkMod
     @SidedProxy(serverSide = "at.htlkaindorf.holymonkmod.proxy.CommonProxy", clientSide = "at.htlkaindorf.holymonkmod.proxy.ClientProxy")
     public static CommonProxy proxy;
 
+    public static final int ENTITY_MOENCH = 120;
+    public static final int ENTITY_NONNE = 130;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent evt)

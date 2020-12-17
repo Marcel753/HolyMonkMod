@@ -18,7 +18,6 @@ public class Kreuz extends ItemSword implements IHasModel {
 
         ItemInit.ITEMS.add(this);
     }
-
     @Override
     public void registerModels()
     {
