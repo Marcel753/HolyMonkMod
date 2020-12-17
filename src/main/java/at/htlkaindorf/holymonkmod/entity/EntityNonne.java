@@ -1,5 +1,6 @@
 package at.htlkaindorf.holymonkmod.entity;
 
+import at.htlkaindorf.holymonkmod.util.handlers.LootTableHandler;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -11,6 +12,7 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
@@ -42,6 +44,13 @@ public class EntityNonne extends EntityVillager
         this.tasks.addTask(9, new EntityAIVillagerInteract(this));
         this.tasks.addTask(9, new EntityAIWanderAvoidWater(this, 0.6D));
         this.tasks.addTask(10, new EntityAIWatchClosest(this, EntityLiving.class, 8.0F));
+    }
+
+    @Override
+    protected ResourceLocation getLootTable()
+    {
+
+        return LootTableHandler.NONNE;
     }
 
     @Override
