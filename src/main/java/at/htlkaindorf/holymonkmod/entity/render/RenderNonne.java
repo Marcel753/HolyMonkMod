@@ -3,13 +3,14 @@ package at.htlkaindorf.holymonkmod.entity.render;
 import at.htlkaindorf.holymonkmod.HolyMonkMod;
 import at.htlkaindorf.holymonkmod.entity.EntityNonne;
 import at.htlkaindorf.holymonkmod.entity.model.ModelNonne;
+import at.htlkaindorf.holymonkmod.util.Reference;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderNonne extends RenderLiving<EntityNonne>
 {
-    public static final ResourceLocation TEXTURES = new ResourceLocation(HolyMonkMod.modId + ":textures/entity/nonne.png");
+    public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MODID + ":textures/entity/nonne.png");
 
     public RenderNonne(RenderManager manager)
     {

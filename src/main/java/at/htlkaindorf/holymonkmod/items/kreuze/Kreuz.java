@@ -1,21 +1,20 @@
-package at.htlkaindorf.holymonkmod.items;
+package at.htlkaindorf.holymonkmod.items.kreuze;
 
 import at.htlkaindorf.holymonkmod.HolyMonkMod;
 import at.htlkaindorf.holymonkmod.init.ItemInit;
 import at.htlkaindorf.holymonkmod.util.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemSword;
 
-public class ItemBase extends Item implements IHasModel
-{
+public class Kreuz extends ItemSword implements IHasModel {
 
     private String name;
 
-    public ItemBase(String name, CreativeTabs creativeTabs)
-    {
-        setUnlocalizedName(name);
+    public Kreuz(ToolMaterial material, String name) {
+        super(material);
         setRegistryName(name);
-        setCreativeTab(creativeTabs);
+        setUnlocalizedName(name);
+        setCreativeTab(CreativeTabs.COMBAT);
 
         ItemInit.ITEMS.add(this);
     }

@@ -2,6 +2,7 @@ package at.htlkaindorf.holymonkmod.world.gen.generators;
 
 import at.htlkaindorf.holymonkmod.HolyMonkMod;
 import at.htlkaindorf.holymonkmod.interfaces.IStructure;
+import at.htlkaindorf.holymonkmod.util.Reference;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ResourceLocation;
@@ -32,7 +33,7 @@ public class WorldGenStructure extends WorldGenerator implements IStructure
     {
         MinecraftServer mcServer = world.getMinecraftServer();
         TemplateManager manager = worldServer.getStructureTemplateManager();
-        ResourceLocation location = new ResourceLocation(HolyMonkMod.modId, structureName);
+        ResourceLocation location = new ResourceLocation(Reference.MODID, structureName);
         Template template = manager.get(mcServer, location);
 
         if(template != null)
