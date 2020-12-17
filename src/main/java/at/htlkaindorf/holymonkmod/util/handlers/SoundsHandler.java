@@ -1,6 +1,7 @@
 package at.htlkaindorf.holymonkmod.util.handlers;
 
 import at.htlkaindorf.holymonkmod.HolyMonkMod;
+import at.htlkaindorf.holymonkmod.util.Reference;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -18,7 +19,7 @@ public class SoundsHandler
 
     private static SoundEvent registerSound(String name)
     {
-        ResourceLocation location = new ResourceLocation(HolyMonkMod.modId, name);
+        ResourceLocation location = new ResourceLocation(Reference.MODID, name);
         SoundEvent event = new SoundEvent(location);
         event.setRegistryName(name);
         ForgeRegistries.SOUND_EVENTS.register(event);

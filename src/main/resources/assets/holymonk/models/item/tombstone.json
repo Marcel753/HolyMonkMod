@@ -1,0 +1,6 @@
+{
+      "parent": "holymonk:tombstone",
+      "textures": {
+            "all": "holymonk:material/tombstone"
+      }
+}

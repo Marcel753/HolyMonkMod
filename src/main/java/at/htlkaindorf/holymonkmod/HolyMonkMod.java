@@ -1,10 +1,12 @@
 package at.htlkaindorf.holymonkmod;
 
 import at.htlkaindorf.holymonkmod.entity.EntityBase;
+import at.htlkaindorf.holymonkmod.init.BlockInit;
 import at.htlkaindorf.holymonkmod.init.ItemInit;
 import at.htlkaindorf.holymonkmod.potions.PotionInit;
 import at.htlkaindorf.holymonkmod.proxy.CommonProxy;
 import at.htlkaindorf.holymonkmod.util.IHasModel;
+import at.htlkaindorf.holymonkmod.util.Reference;
 import at.htlkaindorf.holymonkmod.util.handlers.RenderHandler;
 import at.htlkaindorf.holymonkmod.util.handlers.SoundsHandler;
 import at.htlkaindorf.holymonkmod.world.gen.generators.WorldGenCustomStructures;
@@ -20,27 +22,21 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-@Mod(modid = HolyMonkMod.modId, name = HolyMonkMod.name, version = HolyMonkMod.version)
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 
 public class HolyMonkMod
 {
-    public static final String modId = "holymonk";
-    public static final String name =  "Holy Monk Mod";
-    public static final String version = "1.0";
 
-    public static final int ENTITY_MOENCH = 120;
-    public static final int ENTITY_NONNE = 130;
+    @Mod.Instance
+    public static HolyMonkMod instance;
 
     @SidedProxy(serverSide = "at.htlkaindorf.holymonkmod.proxy.CommonProxy", clientSide = "at.htlkaindorf.holymonkmod.proxy.ClientProxy")
     public static CommonProxy proxy;
 
-    @Mod.Instance(modId)
-    public static HolyMonkMod instance;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent evt)
     {
-
     }
 
     @Mod.EventHandler
@@ -52,11 +48,10 @@ public class HolyMonkMod
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent evt)
     {
-
     }
 
     @Mod.EventBusSubscriber
-    public static class RegistrationHandler
+    public static class RegistryHandler
     {
         @SubscribeEvent
         public static void register(RegistryEvent.Register<Block> event)
@@ -75,6 +70,12 @@ public class HolyMonkMod
         }
 
         @SubscribeEvent
+        public static void onBlockRegister(RegistryEvent.Register<Block> event)
+        {
+            event.getRegistry().registerAll(BlockInit.BLOCKS.toArray(new Block[0]));
+        }
+
+        @SubscribeEvent
         public static void onModelRegister(ModelRegistryEvent event)
         {
             for(Item item : ItemInit.ITEMS)
@@ -82,6 +83,14 @@ public class HolyMonkMod
                 if(item instanceof IHasModel)
                 {
                     ((IHasModel)item).registerModels();
+                }
+            }
+
+            for(Block block : BlockInit.BLOCKS)
+            {
+                if(block instanceof IHasModel)
+                {
+                    ((IHasModel)block).registerModels();
                 }
             }
         }
