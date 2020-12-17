@@ -20,7 +20,7 @@ public class Kreuz extends ItemSword
         this.name = name;
         setUnlocalizedName(name);
         setRegistryName(name);
-        setCreativeTab(HolyMonkMod.creativeTab);
+        setCreativeTab(CreativeTabs.MISC);
         this.material = material;
         this.maxStackSize = 1;
         this.setMaxDamage(material.getMaxUses());
