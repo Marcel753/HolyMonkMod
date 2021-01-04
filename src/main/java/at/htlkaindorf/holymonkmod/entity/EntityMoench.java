@@ -1,5 +1,6 @@
 package at.htlkaindorf.holymonkmod.entity;
 
+import at.htlkaindorf.holymonkmod.util.handlers.LootTableHandler;
 import at.htlkaindorf.holymonkmod.util.handlers.SoundsHandler;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLiving;
@@ -12,6 +13,7 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
@@ -78,5 +80,10 @@ public class EntityMoench extends EntityVillager
     protected SoundEvent getDeathSound()
     {
         return SoundsHandler.ENTITY_MOENCH_DEATH;
+    }
+
+    @Override
+    protected ResourceLocation getLootTable() {
+        return LootTableHandler.MOENCH;
     }
 }

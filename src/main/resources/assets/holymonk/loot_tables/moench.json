@@ -67,12 +67,49 @@
     },
     {
       "name": "MoenchSpecial",
-      "rolls": 1,
+      "rolls": {
+        "min": 0,
+        "max": 1
+      },
       "entries": [
         {
           "type": "item",
-          "weight": 1,
-          "name": "holymonk:heiliges_brot"
+          "weight": 10,
+          "name": "holymonk:heiliges_brot",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "weight": 8,
+          "name": "holymonk:kreuz_holz"
+        },
+        {
+          "type": "item",
+          "weight": 6,
+          "name": "holymonk:kreuz_stein"
+        },
+        {
+          "type": "item",
+          "weight": 4,
+          "name": "holymonk:kreuz_eisen"
+        },
+        {
+          "type": "item",
+          "weight": 3,
+          "name": "holymonk:kreuz_gold"
+        },
+        {
+          "type": "item",
+          "weight": 2,
+          "name": "holymonk:kreuz_diamant"
         }
       ]
     }
