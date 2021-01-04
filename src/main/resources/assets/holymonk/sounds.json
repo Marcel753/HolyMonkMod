@@ -18,5 +18,26 @@
     "category": "entity",
     "subtitle": "entity.moench.death",
     "sounds": [{"name": "holymonk:entity/moench/death", "stream": true}]
+  },
+
+  "entity.nonne.ambient":
+  {
+    "category": "entity",
+    "subtitle": "entity.nonne.ambient",
+    "sounds": [{"name": "holymonk:entity/nonne/ambient", "stream": true}]
+  },
+
+  "entity.nonne.hurt":
+  {
+    "category": "entity",
+    "subtitle": "entity.nonne.hurt",
+    "sounds": [{"name": "holymonk:entity/nonne/hurt", "stream": true}]
+  },
+
+  "entity.nonne.death":
+  {
+    "category": "entity",
+    "subtitle": "entity.nonne.death",
+    "sounds": [{"name": "holymonk:entity/nonne/death", "stream": true}]
   }
 }

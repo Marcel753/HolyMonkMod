@@ -1,5 +1,7 @@
 package at.htlkaindorf.holymonkmod.entity;
 
+import at.htlkaindorf.holymonkmod.util.handlers.LootTableHandler;
+import at.htlkaindorf.holymonkmod.util.handlers.SoundsHandler;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -11,6 +13,7 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
@@ -57,7 +60,7 @@ public class EntityNonne extends EntityVillager
     @Override
     protected SoundEvent getAmbientSound()
     {
-        return super.getAmbientSound();
+        return SoundsHandler.ENTITY_NONNE_AMBIENT;
     }
 
     @Override
@@ -69,13 +72,18 @@ public class EntityNonne extends EntityVillager
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSourceIn)
     {
-        return super.getHurtSound(damageSourceIn);
+        return SoundsHandler.ENTITY_NONNE_HURT;
     }
 
     @Override
     protected SoundEvent getDeathSound()
     {
-        return super.getDeathSound();
+        return SoundsHandler.ENTITY_NONNE_DEATH;
+    }
+
+    @Override
+    protected ResourceLocation getLootTable() {
+        return LootTableHandler.NONNE;
     }
 }
 

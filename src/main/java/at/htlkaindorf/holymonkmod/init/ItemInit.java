@@ -1,15 +1,5 @@
 package at.htlkaindorf.holymonkmod.init;
 
-import at.htlkaindorf.holymonkmod.items.ArmourModel;
-import at.htlkaindorf.holymonkmod.items.food.ItemCustomFood;
-import at.htlkaindorf.holymonkmod.util.Reference;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraftforge.common.util.EnumHelper;
-import at.htlkaindorf.holymonkmod.items.kreuze.Kreuz;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,4 +24,5 @@ public class ItemInit
     public static final Item HOLZ_EISEN = new Kreuz(Item.ToolMaterial.WOOD, "kreuz_eisen");
     public static final Item HOLZ_GOLD = new Kreuz(Item.ToolMaterial.WOOD, "kreuz_gold");
     public static final Item HOLZ_DIAMANT = new Kreuz(Item.ToolMaterial.WOOD, "kreuz_diamant");
+
 }
